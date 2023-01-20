@@ -30,7 +30,7 @@
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "prettier/prettier": [
-      "warn",
+      "error",
       {
         "endOfLine": "auto"
       }
