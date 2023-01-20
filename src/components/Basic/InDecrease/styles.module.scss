@@ -1,0 +1,19 @@
+.wrapper {
+    @apply px-2 flex items-center;
+
+    .label {
+        @apply leading-1 text-18 font-bold;
+    }
+
+    .value {
+        @apply leading-1 text-18;
+    }
+
+    .button {
+        @apply text-24 leading-1 px-1;
+
+        &:disabled {
+            @apply cursor-not-allowed;
+        }
+    }
+}
