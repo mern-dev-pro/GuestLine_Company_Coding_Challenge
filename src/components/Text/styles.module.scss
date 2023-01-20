@@ -1,0 +1,15 @@
+.wrapper {
+    @apply text-center;
+
+    &.title {
+        @apply text-42;
+    }
+
+    &.heading {
+        @apply text-25;
+    }
+
+    &.pharagraph {
+        @apply text-18;
+    }
+}
