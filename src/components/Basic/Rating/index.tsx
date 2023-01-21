@@ -3,7 +3,7 @@ import StarRatings from 'react-star-ratings';
 
 type RatingProps = {
   rating: number;
-  changeRating: React.Dispatch<React.SetStateAction<number>>;
+  changeRating?: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const Rating: React.FC<RatingProps> = ({ rating, changeRating }) => {
@@ -13,6 +13,7 @@ const Rating: React.FC<RatingProps> = ({ rating, changeRating }) => {
         rating={rating}
         changeRating={changeRating}
         starDimension={'30px'}
+        starSpacing={'3px'}
         starRatedColor="yellow"
         starHoverColor="yellow"
         numberOfStars={5}
