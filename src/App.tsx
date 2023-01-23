@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Text from 'components/Text';
 import Container from 'layout/Container';
-import Rating from 'components/Rating';
+import HomePage from 'pages/Home';
+import { BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
+import Header from 'layout/Header';
 
 function App() {
-  const [stars, setStars] = useState(4);
   return (
     <div>
-      <header>
+      <BrowserRouter>
+        <Header />
         <Container>
-          <Text size="title" content="This is just testing for text component" />
-          <Text size="heading" content="This is just testing for text component" />
-          <Text size="pharagraph" content="This is just testing for text component" />
-          <Rating rating={stars} changeRating={setStars} />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
         </Container>
-      </header>
+      </BrowserRouter>
     </div>
   );
 }
