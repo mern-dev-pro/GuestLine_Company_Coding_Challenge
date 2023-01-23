@@ -1,3 +1,7 @@
 .wrapper {
     @apply py-80 space-y-20;
+
+    .loadingScreen {
+        @apply flex items-center w-full justify-center py-20;
+    }
 }
