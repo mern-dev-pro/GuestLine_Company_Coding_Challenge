@@ -25,7 +25,7 @@ const InDecrease: React.FC<InDecreaseProps> = ({ label, value, setValue }) => {
         <PlusIcon width={20} height={20} />
       </button>
       <span className={styles.value}>{value}</span>
-      <button className={styles.button} onClick={decreaseValue} disabled={value == 0}>
+      <button className={styles.button} onClick={decreaseValue} disabled={value === 0}>
         <MinusIcon width={20} height={20} />
       </button>
     </div>
