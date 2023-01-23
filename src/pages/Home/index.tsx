@@ -45,7 +45,6 @@ const HomePage = () => {
   const [searchParams] = useSearchParams();
   const [loading, setIsLoading] = useState(false);
   const [hotelData, setHotelData] = useState<HotelType[]>([]);
-  console.log('hotelData: ', hotelData);
 
   const getAllHotelData = async () => {
     try {
