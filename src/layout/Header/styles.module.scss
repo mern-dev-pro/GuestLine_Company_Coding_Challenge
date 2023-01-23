@@ -1,0 +1,11 @@
+.wrapper {
+    @apply bg-gray h-400 relative;
+
+    .img {
+        @apply w-full h-full object-cover;
+    }
+
+    .filter {
+        @apply absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2;
+    }
+}
