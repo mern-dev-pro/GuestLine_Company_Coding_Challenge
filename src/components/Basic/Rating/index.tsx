@@ -14,8 +14,8 @@ const Rating: React.FC<RatingProps> = ({ rating, changeRating }) => {
         changeRating={changeRating}
         starDimension={'30px'}
         starSpacing={'3px'}
-        starRatedColor="yellow"
-        starHoverColor="yellow"
+        starRatedColor="#ff3300"
+        starHoverColor="#ff3300"
         numberOfStars={5}
         name="rating"
       />
