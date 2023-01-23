@@ -1,0 +1,51 @@
+.wrapper {
+    @apply shadow-lg border border-lightGray rounded-lg;
+
+    .header {
+        @apply tablet:flex items-start justify-between gap-10;
+
+        .carousel {
+            @apply w-full tablet:w-350 flex-none rounded-lg;
+
+            img {
+                @apply rounded-tl-lg h-240 w-full object-cover;
+            }
+        }
+
+        .headerContent {
+            @apply flex flex-wrap items-start justify-between w-full flex-1 text-left;
+            
+            .name {
+                @apply p-2 text-left;
+
+                .hotelName {
+                    @apply font-extraBold;
+                }
+            }
+    
+            .rating {
+                @apply p-2
+            }
+        }
+    }
+
+    .body {
+        @apply w-full px-10 py-20;
+
+        .room {
+            @apply block tablet:flex items-start justify-between gap-16 border-t border-lightGray p-5;
+
+            .name {
+                @apply flex-none w-240;
+
+                .roomName {
+                    @apply font-extraBold
+                }
+            }
+    
+            .bodyContent {
+                @apply flex-1 w-full;
+            }
+        }
+    }
+}
