@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useSearchParams } from 'react-router-dom';
 
 import ListItem from 'components/UI/ListItem';
 
@@ -41,6 +42,7 @@ export type HotelType = {
 };
 
 const HomePage = () => {
+  const [searchParams] = useSearchParams();
   const [loading, setIsLoading] = useState(false);
   const [hotelData, setHotelData] = useState<HotelType[]>([]);
   console.log('hotelData: ', hotelData);
@@ -72,7 +74,10 @@ const HomePage = () => {
 
   return (
     <div className={styles.wrapper}>
-      {hotelData?.length > 0 && hotelData.map(hotel => <ListItem hotel={hotel} key={hotel?.id} />)}
+      {hotelData?.length > 0 &&
+        hotelData
+          .filter(hotel => hotel.starRating === searchParams.get('star') || searchParams.get('star') === '0')
+          .map(hotel => <ListItem hotel={hotel} key={hotel?.id} />)}
     </div>
   );
 };

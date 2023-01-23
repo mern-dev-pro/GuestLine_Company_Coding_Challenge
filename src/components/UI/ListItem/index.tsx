@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { useSearchParams } from 'react-router-dom';
 
 import Text from 'components/Basic/Text';
 import Rating from 'components/Basic/Rating';
@@ -13,6 +14,7 @@ type ListItemProps = {
 };
 
 const ListItem: React.FC<ListItemProps> = ({ hotel }) => {
+  const [searchParams] = useSearchParams();
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -39,18 +41,24 @@ const ListItem: React.FC<ListItemProps> = ({ hotel }) => {
         </div>
       </div>
       <div className={styles.body}>
-        {hotel?.rooms?.map(room => (
-          <div className={styles.room} key={room?.id}>
-            <div className={styles.name}>
-              <Text content={room?.name} size="pharagraph" additionalClass={styles.roomName} />
-              <Text content={`Adults: ${room?.occupancy?.maxAdults}`} size="pharagraph" />
-              <Text content={`Children: ${room?.occupancy?.maxChildren}`} size="pharagraph" />
+        {hotel?.rooms
+          ?.filter(
+            room =>
+              room?.occupancy.maxAdults >= parseInt(searchParams.get('adults') ?? '0') &&
+              room?.occupancy.maxChildren >= parseInt(searchParams.get('children') ?? '0')
+          )
+          ?.map(room => (
+            <div className={styles.room} key={room?.id}>
+              <div className={styles.name}>
+                <Text content={room?.name} size="pharagraph" additionalClass={styles.roomName} />
+                <Text content={`Adults: ${room?.occupancy?.maxAdults}`} size="pharagraph" />
+                <Text content={`Children: ${room?.occupancy?.maxChildren}`} size="pharagraph" />
+              </div>
+              <div className={styles.bodyContent}>
+                <Text content={room?.longDescription} size="pharagraph" />
+              </div>
             </div>
-            <div className={styles.bodyContent}>
-              <Text content={room?.longDescription} size="pharagraph" />
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
