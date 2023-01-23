@@ -96,7 +96,12 @@ const HomePage = () => {
         <>
           {hotelData?.length > 0 &&
             hotelData
-              .filter(hotel => hotel.starRating === searchParams.get('star') || searchParams.get('star') === '0')
+              .filter(
+                hotel =>
+                  hotel.starRating === searchParams.get('star') ||
+                  searchParams.get('star') === '0' ||
+                  !searchParams.get('star')
+              )
               .map(hotel => <ListItem hotel={hotel} key={hotel?.id} />)}
         </>
       )}
