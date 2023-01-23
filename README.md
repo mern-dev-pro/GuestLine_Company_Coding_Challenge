@@ -1,9 +1,9 @@
 GuestLine Coding Challenge(React + TypeScript + Tailwind CSS)
 
-- Local dev server
-  yarn install
-  yarn start
+ -Local dev server<br/>
+  yarn install<br/>
+  yarn start<br/><br/>
   
- -Production building
-  yarn install
-  yarn build
+-Production building<br/>
+  yarn install<br/>
+  yarn build<br/>
