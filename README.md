@@ -1,4 +1,4 @@
-GuestLine Coding Challenge(React + TypeScript + Tailwind CSS)
+<h2><b>GuestLine Coding Challenge(React + TypeScript + Tailwind CSS)</b><h2>
 
 <b>Env File Contents:</b><br/>
 REACT_APP_API_ENDPOINT_BASE_URL=https://obmng.dbm.guestline.net/api
